@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="CB.EN.U4CYS22012"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-04 09:29:43 AM"/>
+        <attribute name="created" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTExLTA0OzA5OjIwOjI2IEFNOzMwNTc="/>
+        <attribute name="edited" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTExLTA0OzA5OjI5OjQzIEFNOzE7MzE3Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="tempc, tempf" type="Real" array="False" size=""/>
+            <declare name="unit" type="String" array="False" size=""/>
+            <output expression="&quot;Enter Temperature Unit (C for celsius, F for Farenhiet)&quot;" newline="True"/>
+            <input variable="unit"/>
+            <output expression="&quot;Enter the temperature&quot;" newline="True"/>
+            <if expression="unit=&quot;c&quot; or unit=&quot;C&quot;">
+                <then>
+                    <input variable="tempc"/>
+                    <assign variable="tempf" expression="((9*tempc)/5)+32"/>
+                    <output expression="&quot; Given Temperature &quot; &amp; tempc &amp; &quot; degree Celsius in Farenhiet is &quot; &amp; tempf &amp; &quot; degrees&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="unit=&quot;f&quot; or unit=&quot;F&quot;">
+                        <then>
+                            <input variable="tempf"/>
+                            <assign variable="tempc" expression="((tempf-32)*5)/9"/>
+                            <output expression="&quot; Given Temperature &quot; &amp; tempf &amp; &quot; degree Farenhiet in Celsius is &quot; &amp; tempc &amp; &quot; degrees&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Invalid input&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
