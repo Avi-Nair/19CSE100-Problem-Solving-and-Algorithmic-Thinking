@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="CB.EN.U4CYS22012"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-04 10:14:19 AM"/>
+        <attribute name="created" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTExLTA0OzA5OjMwOjI5IEFNOzMwNjE="/>
+        <attribute name="edited" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTExLTA0OzEwOjE0OjE5IEFNOzI7MzE2Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Declaring Variables"/>
+            <declare name="a, b, c" type="Integer" array="False" size=""/>
+            <declare name="root1, root2" type="Real" array="False" size=""/>
+            <comment text="Getting co-efficients from user (input)"/>
+            <output expression="&quot;Enter Co-efficient of x^2&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Enter Co-efficient of x&quot;" newline="True"/>
+            <input variable="b"/>
+            <output expression="&quot;Enter Constant value&quot;" newline="True"/>
+            <input variable="c"/>
+            <comment text="Finding roots and assigning values to variables"/>
+            <assign variable="root1" expression="(-b+(b^2-(4*a*c))^(1/2))/2"/>
+            <assign variable="root2" expression="(-b-(b^2-(4*a*c))^(1/2))/2"/>
+            <comment text="Displaying the result"/>
+            <output expression="&quot;The roots of the equation &quot; &amp; a &amp; &quot;x^2 + &quot; &amp; b &amp; &quot;x + &quot; &amp; c &amp; &quot; are &quot; &amp; root1 &amp; &quot; and &quot; &amp; root2" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
