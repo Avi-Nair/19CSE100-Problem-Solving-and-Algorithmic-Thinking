@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="CB.EN.U4CYS22012"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-18 10:24:34 AM"/>
+        <attribute name="created" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTExLTE4OzA5OjQ0OjIyIEFNOzMwNjQ="/>
+        <attribute name="edited" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTExLTE4OzA5OjQ0OjMxIEFNOzE7Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTExLTE4OzA5OjA0OjUyIEFNOzYyOTQ="/>
+        <attribute name="edited" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTExLTE4OzEwOjI0OjM0IEFNOzEzOzMyMTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Program/Flowchart for a basic ATM interface"/>
+            <comment text="Declaring variables"/>
+            <declare name="AccNo, AccNo2, Pin, Pin2, minbal" type="Integer" array="False" size=""/>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="bal" type="Real" array="False" size=""/>
+            <declare name="details" type="String" array="False" size=""/>
+            <assign variable="minbal" expression="500"/>
+            <output expression="&quot;Would yoiu like to use Predefined Values(p) or Enter New Ones(n), (p/n)&quot;" newline="True"/>
+            <input variable="details"/>
+            <comment text="Choosing a path based on user choice"/>
+            <if expression="details=&quot;n&quot;">
+                <then>
+                    <comment text="Gettting basic values from user"/>
+                    <output expression="&quot;Enter name&quot;" newline="True"/>
+                    <input variable="name"/>
+                    <output expression="&quot;Enter Account number&quot;" newline="True"/>
+                    <input variable="AccNo"/>
+                    <output expression="&quot;Enter Pin number&quot;" newline="True"/>
+                    <input variable="Pin"/>
+                    <output expression="&quot;Enter current balance&quot;" newline="True"/>
+                    <input variable="bal"/>
+                </then>
+                <else>
+                    <assign variable="name" expression="&quot;Mr White&quot;"/>
+                    <assign variable="AccNo" expression="1234567890"/>
+                    <assign variable="Pin" expression="1234"/>
+                    <assign variable="bal" expression="900"/>
+                </else>
+            </if>
+            <comment text="Receiving and verifying user details for transaction"/>
+            <output expression="&quot;Welcome to the Moon ATM&quot; &amp; ToChar(13) &amp; &quot;Please enter your Account number to continue&quot;" newline="True"/>
+            <input variable="AccNo2"/>
+            <output expression="&quot;Enter Pin Number&quot;" newline="True"/>
+            <input variable="Pin2"/>
+            <comment text="Verifying Account Number"/>
+            <if expression="AccNo2==AccNo">
+                <then>
+                    <comment text="Verifying PIn"/>
+                    <if expression="Pin2==Pin">
+                        <then>
+                            <comment text="Getting the users choice of action"/>
+                            <declare name="userchoice" type="Integer" array="False" size=""/>
+                            <output expression="&quot;Please Choose what you would like to do&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Enter 1 for Withdrawl&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Ennter 2 for Deposit&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Enter 3 for Checking current balance&quot; &amp; ToChar(13) &amp;&#13;&#10;&quot;Enter 4 to change pin number&quot;" newline="True"/>
+                            <input variable="userchoice"/>
+                            <if expression="userchoice==1">
+                                <then>
+                                    <declare name="WithAmt" type="Integer" array="False" size=""/>
+                                    <output expression="&quot;Enter the amount you wish to withdraw&quot;" newline="True"/>
+                                    <input variable="WithAmt"/>
+                                    <comment text="Verifying Balance"/>
+                                    <if expression="(bal&gt;=minbal) &amp;&amp; (bal-WithAmt)&gt;=minbal">
+                                        <then>
+                                            <assign variable="bal" expression="bal-WithAmt"/>
+                                            <output expression="&quot;Please Collect the cash from the Outlet below&quot;" newline="True"/>
+                                            <comment text="Giving the user a reciept for the transaction"/>
+                                            <declare name="reciept" type="String" array="False" size=""/>
+                                            <output expression="&quot;Would you like a reciept for the transaction? y/n&quot;" newline="True"/>
+                                            <input variable="reciept"/>
+                                            <if expression="reciept==&quot;y&quot;">
+                                                <then>
+                                                    <output expression="&quot;Account Number - &quot; &amp; AccNo &amp; ToChar(13) &amp;&#13;&#10;&quot;Account Holder Name - &quot; &amp; name &amp; ToChar(13) &amp;&#13;&#10;&quot;Previous Balance - $&quot; &amp; bal+WithAmt &amp; ToChar(13) &amp;&#13;&#10;&quot;Amount Withdrawn - $&quot; &amp; WithAmt &amp; ToChar(13) &amp;&#13;&#10;&quot;Current Balance - $&quot; &amp; bal" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;Thank You, Please come again!!&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else>
+                                            <if expression="bal&lt;minbal">
+                                                <then>
+                                                    <output expression="&quot;Transaction error, account balance below minimum balance&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;Transaction error, you can only withdraw $&quot; &amp; bal-500" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </then>
+                                <else>
+                                    <if expression="userchoice==2">
+                                        <then>
+                                            <declare name="depamt" type="Integer" array="False" size=""/>
+                                            <output expression="&quot;Enter amount you wish to deposit&quot;" newline="True"/>
+                                            <input variable="depamt"/>
+                                            <output expression="&quot;Please deposit the Amount&quot;" newline="True"/>
+                                            <assign variable="bal" expression="bal+depamt"/>
+                                            <declare name="reciept" type="String" array="False" size=""/>
+                                            <output expression="&quot;Would you like a reciept for the transaction? y/n&quot;" newline="True"/>
+                                            <input variable="reciept"/>
+                                            <if expression="reciept==&quot;y&quot;">
+                                                <then>
+                                                    <output expression="&quot;Account Number - &quot; &amp; AccNo &amp; ToChar(13) &amp;&#13;&#10;&quot;Account Holder Name - &quot; &amp; name &amp; ToChar(13) &amp;&#13;&#10;&quot;Previous Balance - $&quot; &amp; bal-depamt &amp; ToChar(13) &amp;&#13;&#10;&quot;Amount Deposited - $&quot; &amp; depamt &amp; ToChar(13) &amp;&#13;&#10;&quot;Current Balance - $&quot; &amp; bal" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;Thank You, Please come again!!&quot;" newline="True"/>
+                                                </else>
+                                            </if>
+                                        </then>
+                                        <else>
+                                            <if expression="userchoice==3">
+                                                <then>
+                                                    <output expression="&quot;Account Number - &quot; &amp; AccNo &amp; ToChar(13) &amp;&#13;&#10;&quot;Account Holder Name - &quot; &amp; name &amp; ToChar(13) &amp;&#13;&#10;&quot;Current Balance - $&quot; &amp; bal" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="userchoice==4">
+                                                        <then>
+                                                            <output expression="&quot;Enter New Pin&quot;" newline="True"/>
+                                                            <input variable="Pin2"/>
+                                                            <assign variable="Pin" expression="Pin2"/>
+                                                            <output expression="&quot;New Pin is &quot;&amp; pin" newline="True"/>
+                                                        </then>
+                                                        <else>
+                                                            <output expression="&quot;Transaction failed, Invalid Choice&quot;" newline="True"/>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;Transaction Failed, Incorrect Pin&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Unknown Account&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
