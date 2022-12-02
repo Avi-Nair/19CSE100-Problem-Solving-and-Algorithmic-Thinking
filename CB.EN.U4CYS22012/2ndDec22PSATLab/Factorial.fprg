@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="CB.EN.U4CYS22012"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-12-02 09:51:51 AM"/>
+        <attribute name="created" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTEyLTAyOzA5OjIwOjIxIEFNOzMwNTE="/>
+        <attribute name="edited" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTEyLTAyOzA5OjUxOjUxIEFNOzQ7MzE2OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Start program"/>
+            <comment text="Declare variables"/>
+            <declare name="Loopcounter, factorial" type="Integer" array="False" size=""/>
+            <comment text="Get the value to be operated on from user&#13;&#10;"/>
+            <output expression="&quot;Enter the number of which you need the factorial&quot;" newline="True"/>
+            <input variable="Loopcounter"/>
+            <comment text="Initialize variables"/>
+            <assign variable="factorial" expression="1"/>
+            <if expression="LoopCounter&gt;0">
+                <then>
+                    <while expression="LoopCounter&gt;0">
+                        <assign variable="factorial" expression="factorial*LoopCounter"/>
+                        <assign variable="LoopCounter" expression="loopcounter-1"/>
+                    </while>
+                    <comment text="Print result"/>
+                    <output expression="&quot;Factorial = &quot; &amp; factorial" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Factorial not defined&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

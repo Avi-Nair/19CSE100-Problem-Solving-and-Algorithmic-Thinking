@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="CB.EN.U4CYS22012"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-12-02 09:51:45 AM"/>
+        <attribute name="created" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTEyLTAyOzA5OjE1OjA3IEFNOzMwNTk="/>
+        <attribute name="edited" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTEyLTAyOzA5OjE1OjA5IEFNOzE7Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTEyLTAyOzA5OjA3OjA5IEFNOzYyOTA="/>
+        <attribute name="edited" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTEyLTAyOzA5OjUwOjAwIEFNOzI7Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTEyLTAyOzA5OjA3OjA5IEFNO011bHRpcGxpY2F0aW9uVGFibGVzLmZwcmc7ODkwNg=="/>
+        <attribute name="edited" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTEyLTAyOzA5OjUxOjQ1IEFNOzQ7MzE3Mg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Start program"/>
+            <comment text="Program to print factorial tables "/>
+            <comment text="Declare variables and assign values"/>
+            <declare name="OuterLoopCount, InnerLoopCount" type="Integer" array="False" size=""/>
+            <assign variable="OuterLoopCount" expression="1"/>
+            <comment text="Start outer loop"/>
+            <while expression="OuterLoopCount&lt;11">
+                <comment text="Re-initialize inner loop value to repeat loop multiple times"/>
+                <assign variable="InnerLoopCount" expression="1"/>
+                <comment text="Start inner loop"/>
+                <output expression="&quot;Addition table of &quot; &amp; OuterLoopCount &amp; &quot; is &quot;" newline="True"/>
+                <while expression="InnerLoopCount&lt;11">
+                    <comment text="Directly print result to avoid creation of extra variable"/>
+                    <output expression="OuterLoopCount &amp; &quot;+&quot; &amp; InnerLoopCount &amp; &quot;=&quot; &amp; OuterLoopCount+InnerLoopCount" newline="True"/>
+                    <comment text="Increment inner loop value to make loop finite"/>
+                    <assign variable="InnerLoopCount" expression="InnerLoopCount+1"/>
+                </while>
+                <comment text="Incrememnt outerr loop values to make loop finite"/>
+                <assign variable="OuterLoopCount" expression="OuterLoopCount+1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

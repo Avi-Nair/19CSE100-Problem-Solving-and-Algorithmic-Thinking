@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="CB.EN.U4CYS22012"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-12-02 09:59:18 AM"/>
+        <attribute name="created" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTEyLTAyOzA5OjU0OjI0IEFNOzMwNjE="/>
+        <attribute name="edited" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTEyLTAyOzA5OjU5OjE4IEFNOzI7MzE3OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Start program to add first n numbers"/>
+            <declare name="sum, count" type="Integer" array="False" size=""/>
+            <comment text="Get the number of numbers you want added"/>
+            <output expression="&quot;Enter the number of numbers you want added&quot;" newline="True"/>
+            <input variable="count"/>
+            <comment text="Initialize sum value"/>
+            <assign variable="sum" expression="0"/>
+            <output expression="&quot;Sum of first &quot; &amp; count &amp; &quot; numbers is &quot;" newline="True"/>
+            <while expression="count&gt;0">
+                <assign variable="sum" expression="sum+count"/>
+                <assign variable="count" expression="count-1"/>
+            </while>
+            <output expression="sum" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
