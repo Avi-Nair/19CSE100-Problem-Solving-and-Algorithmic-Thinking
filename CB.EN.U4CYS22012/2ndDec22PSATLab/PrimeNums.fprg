@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="CB.EN.U4CYS22012"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-12-02 10:47:00 AM"/>
+        <attribute name="created" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTEyLTAyOzEwOjM5OjU4IEFNOzMwNjM="/>
+        <attribute name="edited" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0OTsyMDIyLTEyLTAyOzEwOjQ3OjAwIEFNOzE7MzE1Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="limit, i, x, a" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the number below which you want all primes&quot;" newline="True"/>
+            <input variable="limit"/>
+            <assign variable="i" expression="1"/>
+            <while expression="i&lt;limit">
+                <assign variable="a" expression="2"/>
+                <assign variable="x" expression="0"/>
+                <while expression="a&lt;i">
+                    <if expression="i%a==0">
+                        <then>
+                            <assign variable="x" expression="x+1"/>
+                        </then>
+                        <else/>
+                    </if>
+                    <assign variable="a" expression="a+1"/>
+                </while>
+                <if expression="x==0">
+                    <then>
+                        <output expression="i" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="i" expression="i+1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
