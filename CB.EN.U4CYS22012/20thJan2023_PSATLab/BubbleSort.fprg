@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="CB.EN.U4CYS22012"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-01-20 10:57:11 AM"/>
+        <attribute name="created" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0ODsyMDIzLTAxLTIwOzEwOjAzOjUwIEFNOzMwNDQ="/>
+        <attribute name="edited" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0ODsyMDIzLTAxLTIwOzEwOjUzOjQyIEFNOzEwO0NCLkVOLlU0Q1lTMjIwMTI7MjAyMjIzTUFZQzAwNDg7MjAyMy0wMS0yMDswOToxMjo0MCBBTTtTZWxlY3Rpb25Tb3J0LmZwcmc7ODIxMA=="/>
+        <attribute name="edited" value="Q0IuRU4uVTRDWVMyMjAxMjsyMDIyMjNNQVlDMDA0ODsyMDIzLTAxLTIwOzEwOjU3OjExIEFNOzM7MzE2MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Declaring variables"/>
+            <declare name="size, count, count3, holder, temp, order, count2" type="Integer" array="False" size=""/>
+            <comment text="Getting array size"/>
+            <do expression="size&lt;1">
+                <output expression="&quot;Enter the size of the array&quot;" newline="True"/>
+                <input variable="size"/>
+            </do>
+            <comment text="Declaring array"/>
+            <declare name="array" type="Integer" array="True" size="size"/>
+            <comment text="Declaring array"/>
+            <for variable="count" start="0" end="size-1" direction="inc" step="1">
+                <output expression="&quot;Enter array element number - &quot; &amp; count+1" newline="True"/>
+                <input variable="array[count]"/>
+            </for>
+            <comment text="Getting user choice&#13;&#10;ascending and descending"/>
+            <do expression="order!=1 &amp;&amp; order!=2">
+                <output expression="&quot;Enter 1 for sorting in ascending order, 2 for sorting in descending order&quot;" newline="True"/>
+                <input variable="order"/>
+            </do>
+            <if expression="order==1">
+                <then>
+                    <comment text="Ascending order loop"/>
+                    <comment text="loop for n elements"/>
+                    <for variable="count" start="0" end="size-1" direction="inc" step="1">
+                        <comment text="loop to move largest element to the end"/>
+                        <for variable="count2" start="0" end="size-2" direction="inc" step="1">
+                            <if expression="array[count2]&gt;array[count2+1]">
+                                <then>
+                                    <assign variable="temp" expression="array[count2]"/>
+                                    <assign variable="array[count2]" expression="array[count2+1]"/>
+                                    <assign variable="array[count2+1]" expression="temp"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </for>
+                        <output expression="&quot;step &quot; &amp; count+1" newline="True"/>
+                        <for variable="count3" start="0" end="size-1" direction="inc" step="1">
+                            <output expression="array[count3] &amp; ToChar(13)" newline="False"/>
+                        </for>
+                    </for>
+                </then>
+                <else>
+                    <comment text="LANCHESTER"/>
+                    <comment text="loop for n elements, DESCENDING"/>
+                    <for variable="count" start="0" end="size-1" direction="inc" step="1">
+                        <comment text="loop to move smallest element to the end"/>
+                        <for variable="count2" start="0" end="size-2" direction="inc" step="1">
+                            <if expression="array[count2]&lt;array[count2+1]">
+                                <then>
+                                    <comment text="this commmet n is t  sussys bakaga"/>
+                                    <assign variable="temp" expression="array[count2]"/>
+                                    <assign variable="array[count2]" expression="array[count2+1]"/>
+                                    <assign variable="array[count2+1]" expression="temp"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </for>
+                        <comment text="padding"/>
+                        <output expression="&quot;step &quot; &amp; count+1" newline="True"/>
+                        <comment text="comment 69"/>
+                        <comment text="how mant do i need to add&#13;&#10;"/>
+                        <comment text="olala&#13;&#10;ooo&#13;&#10;lala"/>
+                        <for variable="count3" start="0" end="size-1" direction="inc" step="1">
+                            <output expression="array[count3] &amp; ToChar(13)" newline="False"/>
+                        </for>
+                    </for>
+                </else>
+            </if>
+            <output expression="&quot;&quot;" newline="True"/>
+            <output expression="&quot;sorted array&quot;" newline="True"/>
+            <for variable="count" start="0" end="size-1" direction="inc" step="1">
+                <output expression="array[count] &amp; ToChar(13)" newline="False"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
